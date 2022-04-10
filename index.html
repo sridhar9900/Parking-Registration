@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>Parking Lot Management System</title>
+</head>
+
+<body>
+
+
+    <nav>
+        <header id="header">
+            <a href="#" class="logo">Parking Lot Management System</a>
+
+            <ul class="nav-links">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#table">Register</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+    </nav>
+    </header>
+    <section>
+        <h3 class="main-title">Register Now</h3>
+        <img src="https://c1.wallpaperflare.com/preview/535/528/48/596893b1011b8.jpg" id="background">
+        
+    </section>
+    <script src="app.js"></script>
+
+    <section id="table" style="padding-bottom: 10px;
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-bottom: 20%;">
+        <center>
+            <h1 style="text-decoration:none; color:rgba(240, 248, 255, 0.746); font-size: 2rem; padding-top: 0;">PARKING
+                REGISTRATION</h1>
+            <h3 style="color: white">*After filling the details, click on the button "Register" to confirm registration
+            </h3>
+            <br>
+            <table class="table-border" border="10" width="70%" height="375px">
+                <thead>
+                    <tr>
+                        <th class="tab-elements">Name</th>
+                        <td class="tab-elements"><input class="fill" type="text" name="name" id="name"></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th class="tab-elements">Vehicle Name</th>
+                        <td class="tab-elements"><input class="fill" type="text" name="vname" id="vname"></td>
+                    </tr>
+                    <tr>
+                        <th class="tab-elements">Vehicle Number</th>
+                        <td class="tab-elements"><input class="fill" type="text" name="vnum" id="vnum"></td>
+                    </tr>
+                    <tr>
+                        <th class="tab-elements">Entry Date</th>
+                        <td class="tab-elements"><input class="fill" type="date" name="endate" id="endate"></td>
+                    </tr>
+                    <tr>
+                        <th class="tab-elements">Exit Date</th>
+                        <td class="tab-elements"><input class="fill" type="date" name="exdate" id="exdate"></td>
+                    </tr>
+                    <tr id="btna">
+                        <td colspan="2"><input class="fill" type="button" name="button" id="btn" value="REGISTER"
+                                onclick="AddRow()">
+                        </td>
+
+                    </tr>
+                </tbody>
+
+            </table>
+            <br><br><br>
+            <table class="table-border" border="10" id="show" width="70%">
+                <thead>
+                    <tr>
+                        <th class="tab-elements">Name</th>
+                        <th class="tab-elements">Vehicle Name</th>
+                        <th class="tab-elements">Vehicle Number</th>
+                        <th class="tab-elements">Entry Date</th>
+                        <th class="tab-elements">Exit Date</th>
+                    </tr>
+                </thead>
+            </table>
+        </center>
+    </section>
+    <script>
+        var list1 = [];
+        var list2 = [];
+        var list3 = [];
+        var list4 = [];
+        var list5 = [];
+        var n = 1;
+        var x = 0;
+        function AddRow() {
+            var AddRown = document.getElementById('show');
+            var NewRow = AddRown.insertRow(n);
+            list1[x] = document.getElementById("name").value;
+            list2[x] = document.getElementById("vname").value;
+            list3[x] = document.getElementById("vnum").value;
+            list4[x] = document.getElementById("endate").value;
+            list5[x] = document.getElementById("exdate").value;
+            var cel1 = NewRow.insertCell(0);
+            var cel2 = NewRow.insertCell(1);
+            var cel3 = NewRow.insertCell(2);
+            var cel4 = NewRow.insertCell(3);
+            var cel5 = NewRow.insertCell(4);
+            cel1.innerHTML = list1[x];
+            cel2.innerHTML = list2[x];
+            cel3.innerHTML = list3[x];
+            cel4.innerHTML = list4[x];
+            cel5.innerHTML = list5[x];
+            n++;
+            x++;
+        }
+    </script>
+</body>
+
+</html>
